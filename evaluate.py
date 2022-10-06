@@ -487,11 +487,11 @@ if __name__ == '__main__':
 
 
     if debug:
-        # print("SQUAD-DEBUG")
-        # inspect(squa_dev_df, best_model, tokenizer, indices=[1, 2, 3, 4, 5,6,7,8,9,10,11,12,13,14,15], model_name=model)
-        # print("#########################################")
-        # print("RACE-DEBUG")
-        # inspect(race_dev_df, best_model, tokenizer, indices=[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15], model_name=model)
+        print("SQUAD-DEBUG")
+        inspect(squa_dev_df, best_model, tokenizer, indices=[1, 2, 3, 4, 5,6,7,8,9,10,11,12,13,14,15], model_name=model)
+        print("#########################################")
+        print("RACE-DEBUG")
+        inspect(race_dev_df, best_model, tokenizer, indices=[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15], model_name=model)
         print("#########################################")
         print("SCIQ-DEBUG")
         inspect(sciq_dev_df, best_model, tokenizer, indices=[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15], model_name=model)
