@@ -22,26 +22,15 @@ spark = SparkSession.builder \
       .appName("SparkByExamples.com") \
       .getOrCreate()
 
-# df = spark.read.option('multiline', 'true').json('cs/pdf_parses/pdf_parses_0.jsonl.gz')
-
-# This command below worked fine for me:
-# datapath=os.path.join('data','CS', 'pdf_parses_0.jsonl')
-# datapath = os.path.join('data','CS', 'pdf_parses_0.jsonl')
-# datapath = os.path.join('data','CS', 'pdf', 'pdf_parses_0.jsonl')
 datapath_file = os.path.join('data','SCI', 'pdf', 'pdf_parses_36.jsonl')
 datapath = os.path.join('data','SCI', 'pdf')
-# files = ["data/CS/pdf_parses_0.jsonl", "data/CS/pdf_parses_1.jsonl"]
-# df = spark.read.json(*files)
+
 data_df_1 = spark.read.json(datapath_file)
 
 schema = data_df_1.schema
 data_df = spark.read.json(datapath, schema=schema)
 
-# df2.printSchema()
-# df2.show(false)
-# data_df = spark.read.schema(schema).json(file).cache()
-# df.filter($"_corrupt_record".isNotNull).count()
-# data_df = spark.read.option("multiline","true").json(datapath)
+
 print("Read file into json")
 
 # df.printSchema()
@@ -89,7 +78,6 @@ dfout = spark.createDataFrame(abstracts, "string").toDF("text")
 print("finished loop")
 dfout.show()
 
-# dfout.coalesce(1).write.csv("mycsv")
 dfout.toPandas().to_csv('data/science_full/cs.csv', index=False)
 print("done data")
 #dfout.coalesce(1).write.format("com.databricks.spark.csv").option("header", "true").save("mydata.csv")
