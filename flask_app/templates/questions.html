@@ -1,0 +1,22 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+    <div class="container">
+        <h1>{{title}}</h1>
+        <p>{{description}}</p>
+
+
+    <form action="{{ url_for('questions') }}" method="POST">
+        <div class="half">
+            <input type="radio" name="option" value="good"> Good
+        </div>
+        <div class="half">
+            <input type="radio" name="option" value="bad"> Bad
+        </div>
+
+            <input type="submit" value="Submit">
+    </form>
+
+
+    </div>
+{% endblock %}

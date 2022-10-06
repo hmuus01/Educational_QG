@@ -1,0 +1,15 @@
+
+.container options{
+    height: 100%;
+    margin: 50px;
+    padding: 50px;
+    align: center;
+    justify-content: center;
+    align-items: center;
+}
+
+.text-center{
+    margin-bottom: 200px;
+    padding: 20px;
+    font-size: 20px;
+}

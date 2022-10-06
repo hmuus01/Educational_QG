@@ -1,0 +1,26 @@
+<!--This File contains the html code for the homepage displayed to the user on the client side-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/html">
+<head>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
+    <link charset="utf-8" href="/static/custom.css?q=1280549780" media="screen" rel="stylesheet"/>
+</head>
+  <body class="text-center">
+{% block content %}
+  <div class="Homeage" class="text-center">
+    <h1>AI Educational Question Generation</h1>
+    <p>Homepage</p>
+      <h5 style="padding: 20px">Click the button below to take part in a very short and fun Survey</h5>
+    <button style="border-radius: 25px; padding: 20px;" onclick="location.href='{{ url_for('questions') }}'" type="button" method="POST">
+         Let's Begin</button>
+<!--          </ul>-->
+<!--        </nav></strong>-->
+  </div>
+{% endblock %}
+<!--<footer class="page-footer font small cyan darken-3">-->
+<!--    <div class="footer-copyright text-center py-3">-->
+<!--            © Credit Card Fraud Detection - Computing Project-->
+<!--    </div>-->
+<!--    </footer>-->
+  </body>
+</html>

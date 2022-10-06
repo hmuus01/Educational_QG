@@ -1,0 +1,648 @@
+python run_t5_mlm.py \
+	--output_dir="./qg_t5_model" \
+	--model_type="t5" \
+	--model_name_or_path="hf_model/flax_model.msgpack"\
+	--config_name="./qg_t5_model" \
+	--tokenizer_name="./qg_t5_model" \
+	--dataset_name="data/cs_small" \
+	--dataset_config_name="cs" \
+	--max_seq_length="512" \
+	--per_device_train_batch_size="8" \
+	--per_device_eval_batch_size="8" \
+	--do_train=t \
+	--learning_rate="0.005" \
+	--weight_decay="0.001" \
+	--warmup_steps="2000" \
+	--logging_steps="500" \
+	--save_steps="500" \
+	--eval_steps="2500" \
+	--push_to_hub=False
+
+
+
+python run_t5_mlm.py \
+	--output_dir="./qg-t5-model" \
+	--model_type="t5" \
+	--config_name="./qg-t5-base" \
+	--tokenizer_name="./qg-t5-base" \
+	--dataset_name="data/cs_changed" \
+	--dataset_config_name="cs" \
+	--max_seq_length="512" \
+	--per_device_train_batch_size="8" \
+	--per_device_eval_batch_size="8" \
+	--do_train=t \
+	----overwrite_output_dir\
+	--learning_rate="0.005" \
+	--weight_decay="0.001" \
+	--warmup_steps="2000" \
+	--logging_steps="500" \
+	--save_steps="500" \
+	--eval_steps="2500" \
+	--push_to_hub=False
+
+
+python run_t5_mlm.py \
+	--output_dir="./qg-t5-model" \
+	--model_type="t5" \
+	--model_name_or_path="hf_model" \
+	--config_name="./qg-t5-new" \
+	--tokenizer_name="./qg-t5-new" \
+	--dataset_name="data/cs_changed" \
+	--dataset_config_name="cs" \
+	--max_seq_length="512" \
+	--per_device_train_batch_size="8" \
+	--per_device_eval_batch_size="8" \
+	--do_train=t \
+	--overwrite_output_dir \
+	--learning_rate="0.005" \
+	--weight_decay="0.001" \
+	--warmup_steps="2000" \
+	--logging_steps="500" \
+	--save_steps="500" \
+	--eval_steps="2500" \
+	--push_to_hub=False
+
+
+python run_t5_mlm.py \
+	--output_dir="./qg-t5-model" \
+	--model_type="t5" \
+	--model_name_or_path="hf_model" \
+	--config_name="./qg-t5-new" \
+	--tokenizer_name="./qg-t5-new" \
+	--dataset_name="data/computer_science" \
+	--dataset_config_name="cs" \
+	--max_seq_length="512" \
+	--per_device_train_batch_size="8" \
+	--per_device_eval_batch_size="8" \
+	--do_train=t \
+	--overwrite_output_dir \
+	--learning_rate="0.005" \
+	--weight_decay="0.001" \
+	--warmup_steps="2000" \
+	--logging_steps=500" \
+	--save_steps="500" \
+	--eval_steps="2500" \
+	--push_to_hub=False
+
+
+
+python run_t5_mlm.py \
+	--output_dir="./qg-t5-model" \
+	--model_type="t5" \
+	--model_name_or_path="hf_model" \
+	--config_name="./qg-t5-new" \
+	--tokenizer_name \
+	--dataset_name="data/computer_science" \
+	--dataset_config_name="cs" \
+	--max_seq_length="512" \
+	--per_device_train_batch_size="8" \
+	--per_device_eval_batch_size="8" \
+	--do_train=t \
+	--overwrite_output_dir \
+	--learning_rate="0.005" \
+	--weight_decay="0.001" \
+	--warmup_steps="2000" \
+	--logging_steps="500" \
+	--save_steps="500" \
+	--eval_steps="2500" \
+	--push_to_hub=False
+
+
+python run_t5_mlm.py \
+	--output_dir="./qg-t5-model_2" \
+	--model_type="t5" \
+	--model_name_or_path="./qg-t5-new" \
+	--config_name="./qg-t5-new" \
+	--dataset_name="data/computer_science" \
+	--dataset_config_name="cs" \
+	--max_seq_length="2048" \
+	--per_device_train_batch_size="8" \
+	--per_device_eval_batch_size="8" \
+	--do_train=t \
+	--overwrite_output_dir \
+	--learning_rate="0.005" \
+	--weight_decay="0.001" \
+	--warmup_steps="2000" \
+	--logging_steps="500" \
+	--save_steps="500" \
+	--eval_steps="2500" \
+	--push_to_hub=False > newput2.txt &
+
+
+python run_t5_mlm.py \
+    --output_dir="./qg-t5-model" \
+    --model_type="t5" \
+    --model_name_or_path="./qg-t5-new" \
+    --config_name="./qg-t5-new" \
+    --dataset_name="data/computer_science" \
+    --dataset_config_name="cs" \
+    --max_seq_length="256" \
+    --per_device_train_batch_size="6" \
+    --per_device_eval_batch_size="6" \
+    --do_train=t \
+    --overwrite_output_dir \
+    --learning_rate="0.005" \
+    --weight_decay="0.001" \
+    --warmup_steps="2000" \
+    --logging_steps="500" \
+    --save_steps="500" \
+    --eval_steps="2500" \
+    --push_to_hub=False > newput.txt &
+
+python run_t5_mlm.py \
+    --output_dir="./qg-scratch" \
+    --model_type="t5" \
+    --tokenizer="./tokenizer_scratch" \
+    --dataset_name="data/computer_science" \
+    --dataset_config_name="cs" \
+    --max_seq_length="512" \
+    --per_device_train_batch_size="8" \
+    --per_device_eval_batch_size="8" \
+    --do_train=t \
+    --overwrite_output_dir \
+    --learning_rate="0.005" \
+    --weight_decay="0.001" \
+    --warmup_steps="2000" \
+    --logging_steps="500" \
+    --save_steps="500" \
+    --eval_steps="2500" \
+    --push_to_hub=False
+
+    > scratch_newput.txt &
+
+python run_t5_mlm.py \
+    --output_dir="./qg-scratch" \
+    --model_type="t5" \
+    --tokenizer_name="./tokenizer_scratch" \
+    --config_name="./tokenizer_scratch" \
+    --dataset_name="data/computer_science" \
+    --dataset_config_name="cs" \
+    --max_seq_length="512" \
+    --per_device_train_batch_size="8" \
+    --per_device_eval_batch_size="8" \
+    --do_train=t \
+    --overwrite_output_dir \
+    --learning_rate="0.005" \
+    --weight_decay="0.001" \
+    --warmup_steps="2000" \
+    --logging_steps="500" \
+    --save_steps="500" \
+    --eval_steps="2500" \
+    --push_to_hub=False
+
+python run_qa.py \
+  --model_name_or_path t5-base \
+  --dataset_name data/squad \
+  --do_train t \
+  --max_seq_length 512 \
+  --doc_stride 128 \
+  --learning_rate 3e-5 \
+  --num_train_epochs 3 \
+  --per_device_train_batch_size 8 \
+  --output_dir ./t5-qa-squad \
+  --eval_steps 1000
+
+
+python run_seq2seq_qa.py \
+  --model_name_or_path ./qg-t5-model_2 \
+  --dataset_name data/squad \
+  --context_column context_para \
+  --question_column question \
+  --answer_column answer_text \
+  --do_train t\
+  --do_eval \
+  --per_device_train_batch_size 8 \
+  --learning_rate 3e-5 \
+  --num_train_epochs 2 \
+  --max_seq_length 512 \
+  --doc_stride 128 \
+  --output_dir ./t5-qa-squad
+
+python run_seq2seq_qa.py \
+  --model_name_or_path t5-small \
+  --dataset_name data/squad \
+  --context_column context_para \
+  --question_column question \
+  --answer_column answer_text \
+  --do_train t\
+  --do_eval \
+  --per_device_train_batch_size 8 \
+  --learning_rate 3e-5 \
+  --num_train_epochs 2 \
+  --max_seq_length 512 \
+  --doc_stride 128 \
+  --output_dir ./t5-qa-small
+
+python run_qa.py \
+  --model_name_or_path t5-small \
+  --dataset_name data/squad \
+  --do_train \
+  --max_seq_length 512 \
+  --doc_stride 128 \
+  --learning_rate 3e-5 \
+  --num_train_epochs 3 \
+  --per_device_train_batch_size 8 \
+  --output_dir ./t5-qa-small \
+  --eval_steps 1000
+
+
+
+python run_qa.py \
+  --model_name_or_path ./qg-scratch \
+  --dataset_name data/squad \
+  --do_train t \
+  --max_seq_length 512 \
+  --doc_stride 128 \
+  --learning_rate 3e-5 \
+  --num_train_epochs 3 \
+  --per_device_train_batch_size 8 \
+  --output_dir ./t5-qa-squad \
+  --eval_steps 1000
+
+python run_qa.py \
+  --model_name_or_path t5-small \
+  --dataset_name data/squad \
+  --do_train t \
+  --max_seq_length 512 \
+  --doc_stride 128 \
+  --learning_rate 3e-5 \
+  --num_train_epochs 3 \
+  --per_device_train_batch_size 8 \
+  --output_dir ./t5-qa-squad \
+  --eval_steps 1000
+
+python run_seq2seq_qa.py \
+  --model_name_or_path /qg-scratch \
+  --dataset_name data/squad \
+  --context_column context_para \
+  --question_column question \
+  --answer_column answer_text \
+  --do_train t\
+  --do_eval \
+  --per_device_train_batch_size 8 \
+  --learning_rate 3e-5 \
+  --num_train_epochs 2 \
+  --max_seq_length 512 \
+  --doc_stride 128 \
+  --output_dir ./t5-qa-small
+
+python run_t5_mlm.py \
+ --output_dir="./t_t5_pre" \
+ --model_type="t5" \
+ --config_name="./t_t5_pre" \
+ --tokenizer_name="./t_t5_pre" \
+ --dataset_name="data/cs" \
+ --dataset_config_name="t_tok" \
+ --max_seq_length="512" \
+ --per_device_train_batch_size="8" \
+ --per_device_eval_batch_size="8" \
+ --adafactor \
+ --learning_rate="0.005" \
+ --weight_decay="0.001" \
+ --warmup_steps="2000" \
+ --overwrite_output_dir \
+ --logging_steps="500" \
+ --save_steps="500" \
+ --eval_steps="2500" > n_train_new.txt &
+
+python run_qa.py \
+  --model_name_or_path ./t_t5_pre \
+  --dataset_name data/squad \
+  --do_train t \
+  --max_seq_length 512 \
+  --doc_stride 128 \
+  --learning_rate 3e-5 \
+  --num_train_epochs 3 \
+  --per_device_train_batch_size 8 \
+  --output_dir ./t5-qa-squad \
+  --eval_steps 1000
+
+
+python run_t5_mlm.py \
+ --output_dir="./t_from_checkpoint_t5_pre" \
+ --model_name_or_path="t5_qa_from_checkpoint" \
+ --model_type="t5" \
+ --dataset_name="data/computer_science" \
+ --max_seq_length="512" \
+ --per_device_train_batch_size="8" \
+ --per_device_eval_batch_size="8" \
+ --adafactor \
+ --learning_rate="0.005" \
+ --weight_decay="0.001" \
+ --warmup_steps="2000" \
+ --overwrite_output_dir \
+ --logging_steps="500" \
+ --save_steps="500" \
+ --eval_steps="2500" > qa_t5_check_pre.txt &
+
+
+ python run_t5_mlm.py \
+ --output_dir="./t_from_checkpoint_science_t5_pre" \
+ --model_name_or_path="t5_qa_from_checkpoint" \
+ --model_type="t5" \
+ --dataset_name="data/science" \
+ --max_seq_length="512" \
+ --per_device_train_batch_size="8" \
+ --per_device_eval_batch_size="8" \
+ --adafactor \
+ --learning_rate="0.005" \
+ --weight_decay="0.001" \
+ --warmup_steps="2000" \
+ --overwrite_output_dir \
+ --logging_steps="500" \
+ --save_steps="500" \
+ --eval_steps="2500" > qa_t5_science_check_pre.txt &
+
+
+  python run_t5_mlm.py \
+ --output_dir="./t_from_checkpoint_science_full_t5_pre" \
+ --model_name_or_path="t5_qa_from_checkpoint" \
+ --model_type="t5" \
+ --dataset_name="data/science_full" \
+ --max_seq_length="512" \
+ --per_device_train_batch_size="8" \
+ --per_device_eval_batch_size="8" \
+ --adafactor \
+ --learning_rate="0.005" \
+ --weight_decay="0.001" \
+ --warmup_steps="2000" \
+ --overwrite_output_dir \
+ --logging_steps="500" \
+ --save_steps="500" \
+ --eval_steps="2500" > qa_t5_science_full_check_pre.txt &
+
+num_train_epochs
+
+python run_t5_mlm.py \
+ --output_dir="./t_from_checkpoint_science_full_more_epochs_t5_pre" \
+ --model_name_or_path="t5_qa_from_checkpoint" \
+ --model_type="t5" \
+ --dataset_name="data/science_full" \
+ --max_seq_length="512" \
+ --per_device_train_batch_size="8" \
+ --per_device_eval_batch_size="8" \
+ --num_train_epochs="6.0" \
+ --adafactor \
+ --learning_rate="0.005" \
+ --weight_decay="0.001" \
+ --warmup_steps="2000" \
+ --overwrite_output_dir \
+ --logging_steps="500" \
+ --save_steps="500" \
+ --eval_steps="2500" > qa_t5_science_full_more_epochs_check_pre.txt &
+
+   python run_t5_mlm.py \
+ --output_dir="./t_from_checkpoint_science_full_more_epochs_t5_pre" \
+ --model_name_or_path="t5_qa_from_checkpoint" \
+ --model_type="t5" \
+ --dataset_name="data/science_full" \
+ --max_seq_length="512" \
+ --per_device_train_batch_size="8" \
+ --per_device_eval_batch_size="8" \
+ --num_train_epochs="5.0" \
+ --adafactor \
+ --learning_rate="0.005" \
+ --weight_decay="0.001" \
+ --warmup_steps="2000" \
+ --overwrite_output_dir \
+ --logging_steps="500" \
+ --save_steps="500" \
+ --eval_steps="2500" > qa_t5_science_full_more_epochs_check_pre.txt &
+
+ python run_t5_mlm.py \
+ --output_dir="./pre_train_latest_5" \
+ --model_name_or_path="t5_qa_from_checkpoint" \
+ --model_type="t5" \
+ --dataset_name="data/science_full" \
+ --max_seq_length="512" \
+ --per_device_train_batch_size="8" \
+ --per_device_eval_batch_size="8" \
+ --num_train_epochs="5.0" \
+ --adafactor \
+ --learning_rate="0.005" \
+ --weight_decay="0.001" \
+ --warmup_steps="2000" \
+ --overwrite_output_dir \
+ --logging_steps="500" \
+ --save_steps="500" \
+ --eval_steps="2500" > qa_t5_science_more_epochs__pre.txt &
+
+
+
+ pre_train_latest_5
+
+
+ python run_t5_mlm.py \
+ --output_dir="./pre_train_latest_5_more_epoch" \
+ --model_name_or_path="pre_train_latest_5" \
+ --model_type="t5" \
+ --dataset_name="data/science_full" \
+ --max_seq_length="512" \
+ --per_device_train_batch_size="8" \
+ --per_device_eval_batch_size="8" \
+ --num_train_epochs="3.0" \
+ --adafactor \
+ --learning_rate="0.005" \
+ --weight_decay="0.001" \
+ --warmup_steps="2000" \
+ --overwrite_output_dir \
+ --logging_steps="500" \
+ --save_steps="500" \
+ --eval_steps="2500" > qa_pre_train_latest_5_more__pre.txt &
+
+
+
+ python run_t5_mlm.py \
+ --output_dir="./pre_train_latest_5_more_epoch_version_2" \
+ --model_name_or_path="pre_train_latest_5_more_epoch" \
+ --model_type="t5" \
+ --dataset_name="data/science_full" \
+ --max_seq_length="512" \
+ --per_device_train_batch_size="8" \
+ --per_device_eval_batch_size="8" \
+ --num_train_epochs="3.0" \
+ --adafactor \
+ --learning_rate="0.005" \
+ --weight_decay="0.001" \
+ --warmup_steps="2000" \
+ --overwrite_output_dir \
+ --logging_steps="500" \
+ --save_steps="500" \
+ --eval_steps="2500" > qa_pre_train_latest_5_more__pre_version_2.txt &
+
+
+
+ python run_t5_mlm.py \
+ --output_dir="./pre_train_latest_5_more_epoch_version_3" \
+ --model_name_or_path="pre_train_latest_5_more_epoch_version_2" \
+ --model_type="t5" \
+ --dataset_name="data/science_full" \
+ --max_seq_length="512" \
+ --per_device_train_batch_size="8" \
+ --per_device_eval_batch_size="8" \
+ --num_train_epochs="6.0" \
+ --adafactor \
+ --learning_rate="0.005" \
+ --weight_decay="0.001" \
+ --warmup_steps="2000" \
+ --overwrite_output_dir \
+ --logging_steps="500" \
+ --save_steps="500" \
+ --eval_steps="2500" > qa_pre_train_latest_5_more__pre_version_3.txt &
+
+
+
+ python run_t5_mlm.py \
+ --output_dir="./pre_train_on_t5_small" \
+ --model_name_or_path="t5_small" \
+ --model_type="t5" \
+ --dataset_name="data/science_full" \
+ --max_seq_length="512" \
+ --per_device_train_batch_size="8" \
+ --per_device_eval_batch_size="8" \
+ --num_train_epochs="6.0" \
+ --adafactor \
+ --learning_rate="0.005" \
+ --weight_decay="0.001" \
+ --warmup_steps="2000" \
+ --overwrite_output_dir \
+ --logging_steps="500" \
+ --save_steps="500" \
+ --eval_steps="2500" > qa_pre_train_on_t5small.txt &
+
+
+ python run_t5_mlm.py \
+ --output_dir="./pre_train_on_t5_small_v1" \
+ --model_name_or_path="pre_train_on_t5_small" \
+ --model_type="t5" \
+ --dataset_name="data/science_full" \
+ --max_seq_length="512" \
+ --per_device_train_batch_size="8" \
+ --per_device_eval_batch_size="8" \
+ --num_train_epochs="10.0" \
+ --adafactor \
+ --learning_rate="0.005" \
+ --weight_decay="0.001" \
+ --warmup_steps="2000" \
+ --overwrite_output_dir \
+ --logging_steps="500" \
+ --save_steps="500" \
+ --eval_steps="2500" > qa_pre_train_on_t5small_v1.txt &
+
+
+ python run_t5_mlm.py \
+ --output_dir="./pre_train_on_t5_small_v2" \
+ --model_name_or_path="pre_train_on_t5_small_v1" \
+ --model_type="t5" \
+ --dataset_name="data/science_full" \
+ --max_seq_length="512" \
+ --per_device_train_batch_size="8" \
+ --per_device_eval_batch_size="8" \
+ --num_train_epochs="10.0" \
+ --adafactor \
+ --learning_rate="0.005" \
+ --weight_decay="0.001" \
+ --warmup_steps="2000" \
+ --overwrite_output_dir \
+ --logging_steps="500" \
+ --save_steps="500" \
+ --eval_steps="2500" > qa_pre_train_on_t5small_v2.txt &
+
+
+ python run_t5_mlm.py \
+ --output_dir="./pre_train_on_t5_small_v3" \
+ --model_name_or_path="pre_train_on_t5_small_v2" \
+ --model_type="t5" \
+ --dataset_name="data/science_full" \
+ --max_seq_length="512" \
+ --per_device_train_batch_size="8" \
+ --per_device_eval_batch_size="8" \
+ --num_train_epochs="20.0" \
+ --adafactor \
+ --learning_rate="0.005" \
+ --weight_decay="0.001" \
+ --warmup_steps="2000" \
+ --overwrite_output_dir \
+ --logging_steps="500" \
+ --save_steps="500" \
+ --eval_steps="2500" > qa_pre_train_on_t5small_v3.txt &
+
+
+ python run_t5_mlm.py \
+ --output_dir="./pre_train_latest_with_new_tok" \
+ --model_name_or_path="new_t5_qa_checkpoint" \
+ --model_type="t5" \
+ --dataset_name="data/science_full" \
+ --max_seq_length="512" \
+ --per_device_train_batch_size="8" \
+ --per_device_eval_batch_size="8" \
+ --num_train_epochs="5.0" \
+ --adafactor \
+ --learning_rate="0.005" \
+ --weight_decay="0.001" \
+ --warmup_steps="2000" \
+ --overwrite_output_dir \
+ --logging_steps="500" \
+ --save_steps="500" \
+ --eval_steps="2500" > qa_pre_train_t5_with_new_tok.txt &
+
+
+ python run_t5_mlm.py \
+ --output_dir="./pre_train_latest_with_new_tok_small" \
+ --model_type="t5" \
+ --config_name="./pre_train_tokenizer_small" \
+ --tokenizer_name="./pre_train_tokenizer_small" \
+ --dataset_name="data/science_full" \
+ --dataset_config_name="t_tok_pre" \
+ --max_seq_length="512" \
+ --num_train_epochs="5.0" \
+ --per_device_train_batch_size="8" \
+ --per_device_eval_batch_size="8" \
+ --adafactor \
+ --learning_rate="0.005" \
+ --weight_decay="0.001" \
+ --warmup_steps="2000" \
+ --overwrite_output_dir \
+ --logging_steps="500" \
+ --save_steps="500" \
+ --eval_steps="2500" > qa_pre_train_t5_with_new_tok_small.txt &
+
+
+
+ python run_t5_mlm.py \
+ --output_dir="./pre_train_latest_with_new_tok_small_v2" \
+ --model_name_or_path="pre_train_latest_with_new_tok_small" \
+ --model_type="t5" \
+ --dataset_name="data/science_full" \
+ --max_seq_length="512" \
+ --per_device_train_batch_size="8" \
+ --per_device_eval_batch_size="8" \
+ --num_train_epochs="12.0" \
+ --adafactor \
+ --learning_rate="0.005" \
+ --weight_decay="0.001" \
+ --warmup_steps="2000" \
+ --overwrite_output_dir \
+ --logging_steps="500" \
+ --save_steps="500" \
+ --eval_steps="2500" > qa_pre_train_t5_with_new_tok_v2.txt &
+
+
+
+ python run_t5_mlm.py \
+ --output_dir="./pre_train_latest_with_new_tok_small_v3" \
+ --model_name_or_path="pre_train_latest_with_new_tok_small_v2" \
+ --model_type="t5" \
+ --dataset_name="data/science_full" \
+ --max_seq_length="512" \
+ --per_device_train_batch_size="8" \
+ --per_device_eval_batch_size="8" \
+ --num_train_epochs="15.0" \
+ --adafactor \
+ --learning_rate="0.005" \
+ --weight_decay="0.001" \
+ --warmup_steps="2000" \
+ --overwrite_output_dir \
+ --logging_steps="500" \
+ --save_steps="500" \
+ --eval_steps="2500" > qa_pre_train_t5_with_new_tok_v3.txt &
